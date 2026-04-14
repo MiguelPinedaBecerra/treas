@@ -1,8 +1,8 @@
-from src.models.TareasModel import TareaModel
+from models.TareasModel import TareaModel
 
 class TareaController:
     def __init__(self):
-        self.model = TareaModel()
+        self.model = TareasModel()
         
     def obtener_lista(self, id_usuario):
         return self.model.listar_por_usuario(id_usuario)

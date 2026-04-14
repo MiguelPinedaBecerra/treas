@@ -1,6 +1,6 @@
-def main():
-    print("Hello from treas!")
+import flet as ft 
+from controllers.UsuarioController import AuthController
+from controllers.TareaController import TareaController
+from views.LoginView import LoginView
+from views.dashboard import DashboardView
 
-
-if __name__ == "__main__":
-    main()
