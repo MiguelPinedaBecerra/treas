@@ -1,5 +1,5 @@
-import bycript
-from .database import Database
+import bcrypt
+from .databaseModel import Database
 
 class UsuarioModel:
     def __init__(self):
@@ -29,9 +29,9 @@ class UsuarioModel:
         conn = self.db.get_connection()
         cursor = conn.cursor(dictionary=True)
         cursor.execute("SELECT * FROM usuarios WHERE email = %s", (email,))
-        usuario = cursor.fetchone()
+        user = cursor.fetchone()
         conn.close()
         
-        if usuario and bycript.checkpw(password.encode('utf-8'), usuario['password'].encode('utf-8')):
-            return usuario
+        if user and bycript.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
+            return user
         return None

@@ -19,6 +19,9 @@ dependencies = [
 #importante: quitamos el reflejo "src. porque definimos src como la raiz
 app = "main:main"
 
+[tool.uv]
+package = true
+
 #esta seccion es crucial para que python vea el contenido de src como el nivel raiz
-[tool.setuptools.packpage-dir]
+[tool.setuptools.package-dir]
 "" = "src"
