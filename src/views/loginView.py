@@ -15,9 +15,9 @@ def LoginView(page, auth_controller):
             page.update()
             
         return ft.View("/", [
-            ft.AppBar(tittle=ft.Text("SIGE - login"), bgcolor=ft.Colors.BLUE_GREY_900, color="white"),
+            ft.AppBar(tittle=ft.Text("SIGE - login"), bgcolor=ft.colors.BLUE_GREY_900, color="white"),
             ft.Colunm([
-                ft.Icon(ft.Icons.LOCK_PERSON, size=50, color=ft.Colors.BLUE),
+                ft.Icon(ft.Icons.LOCK_PERSON, size=50, color=ft.colors.BLUE),
                 ft.Text("Acceso al sistema", size=24, weigth="bold"),
                 email_input,
                 pass_input,
