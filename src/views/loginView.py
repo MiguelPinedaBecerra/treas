@@ -21,8 +21,8 @@ def LoginView(page: ft.Page, auth_controller):
             page.snack_bar.open = True
             page.update()
             
-    login_button = ft.ElevatedButton("Entrar", on_click=login_click, width=350, bgcolor="blue", color = "white")
-    registrar = ft.ElevatedButton("Crear una nueva cuenta", bgcolor="green", color = "white", on_click=lambda _: page.go("/registro"))
+    login_button = ft.ElevatedButton("Entrar", on_click=login_click, width=350, bgcolor="red", color = "black")
+    registrar = ft.ElevatedButton("Crear una nueva cuenta", bgcolor="red", color = "black", on_click=lambda _: page.go("/registro"))
     pass_input.on_submit = login_click
         
     
@@ -30,7 +30,7 @@ def LoginView(page: ft.Page, auth_controller):
         route = "/",
         vertical_alignment=ft.MainAxisAlignment.CENTER,
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        appbar=ft.AppBar(title=ft.Text("SIGE - login"), bgcolor="bluegrey900", color= "white"),
+        appbar=ft.AppBar(title=ft.Text("SIGE - login"), bgcolor="bluegrey", color= "black"),
         controls=[
             ft.Column(
                 [
