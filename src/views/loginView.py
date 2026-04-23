@@ -4,14 +4,15 @@ def LoginView(page: ft.Page, auth_controller):
     email_input = ft.TextField(label="Correo Electronico", width = 350, border_radius=10)
     pass_input = ft.TextField(label="Contraseña", password=True, can_reveal_password=True, width=350, border_radius=10)
     
+
     def login_click(e):
         if not email_input.value or not pass_input.value:
             page.snack_bar = ft.Snack_bar = ft.SnackBar(ft.Text("Por favor, llene todos los campos"))
             page.snack_bar.open = True
             page.update()
             return
-
-        user, msg = auth_controller.login(email_input.value, pass_input.value)
+        
+            user, msg = auth_controller.login(email_input.value, pass_input.value)
         
         if user:
             page.session.set("user", user)
@@ -21,8 +22,8 @@ def LoginView(page: ft.Page, auth_controller):
             page.snack_bar.open = True
             page.update()
             
-    login_button = ft.ElevatedButton("Entrar", on_click=login_click, width=350, bgcolor="red", color = "black")
-    registrar = ft.ElevatedButton("Crear una nueva cuenta", bgcolor="red", color = "black", on_click=lambda _: page.go("/registro"))
+    login_button = ft.ElevatedButton("Entrar", on_click=login_click, width=350, bgcolor="#F73000", color = "black")
+    registrar = ft.ElevatedButton("Crear una nueva cuenta", bgcolor="#F73000", color = "black", on_click=lambda _: page.go("/registro"))
     pass_input.on_submit = login_click
         
     
@@ -30,7 +31,7 @@ def LoginView(page: ft.Page, auth_controller):
         route = "/",
         vertical_alignment=ft.MainAxisAlignment.CENTER,
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-        appbar=ft.AppBar(title=ft.Text("SIGE - login"), bgcolor="bluegrey", color= "black"),
+        appbar=ft.AppBar(title=ft.Text("Inicio de sesion - login"), bgcolor="#F73000", color= "black"),
         controls=[
             ft.Column(
                 [

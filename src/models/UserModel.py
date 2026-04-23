@@ -16,8 +16,8 @@ class UsuarioModel:
             cursor.execute(
                 "INSERT INTO usuarios (nombre, email, password) VALUES (%s, %s, %s)",
                 (usuario_data.nombre, usuario_data.email, hashed_pw.decode('utf-8'))
-
             )
+            
             conn.commit()
         except Exception as e:
             print(f"Error: {e}")
