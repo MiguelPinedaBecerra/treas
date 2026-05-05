@@ -42,7 +42,7 @@ class UsuarioModel:
         try: 
             #1. establecer conexion
             conn = self.db.get_connection()
-            cursor = conn.cursor+(dictionary=True) #dictionary facilita leer por nombre de columna
+            cursor = conn.cursor(dictionary=True) #dictionary facilita leer por nombre de columna
             
             #2. Definir la consilta
             #IMPORTANTE: Usamos placeholders (%) para evitar la Inyeccion SQL
@@ -69,4 +69,4 @@ class UsuarioModel:
         finally:
             #5. Siempre crrar cursor y connexion
             if cursor: cursor.close()
-            if conn.close()
+            if conn: conn.close()
