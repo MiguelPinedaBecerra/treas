@@ -36,7 +36,15 @@ CREATE TABLE `tareas` (
   `fecha_limite` date NOT NULL,
   `hora_limite` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+ `estado` enum('pendiente','en_progreso','completada','cancelada') COLLATE utf8mb4_unicode_ci DEFAULT 'pendiente',
+  `clasificacion` enum('personal','trabajo','estudio','hogar','salud','otro') COLLATE utf8mb4_unicode_ci DEFAULT 'personal',
+  `prioridad` enum('baja','media','alta') COLLATE utf8mb4_unicode_ci DEFAULT 'media',
+  `completada` tinyint DEFAULT '0',
+  `fecha_completada` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id_tarea`),
+  KEY `idx_usuario` (`id_usuario`),
+  KEY `idx_estado` (`estado`),
+  KEY `idx_clasificacion` (`clasificacion`)
 -- --------------------------------------------------------
 
 --
